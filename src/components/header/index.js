@@ -2,10 +2,10 @@ import React from "react";
 import Logo from "../../assets/logo.svg";
 export default function Header(props) {
   return (
-    <header>
-      <div className="wrap">
-        <div className="logo">
-          <img src={Logo} alt="logo" />
+    <header className="headerComponent" data-test="headerComponent">
+      <div className="wrap" data-test="wrap">
+        <div className="logo" data-test="logo">
+          <img className="logoImg" src={Logo} alt="logo" data-test="logoImg" />
         </div>
       </div>
     </header>

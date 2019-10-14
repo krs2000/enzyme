@@ -3,7 +3,10 @@ body {
   padding: 0;
   background: rgba(0, 0, 0, 0.01);
 }
-
+.main {
+  max-width: 980px;
+  margin: 0 auto;
+}
 header {
   display: block;
   width: 100%;

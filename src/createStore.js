@@ -8,4 +8,7 @@ export const createStoreWithMiddleware = applyMiddleware(...middlewares)(
   createStore
 );
 
-export const store = createStoreWithMiddleware(rootReducer);
+export const store = createStoreWithMiddleware(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);

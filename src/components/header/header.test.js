@@ -21,7 +21,7 @@ describe("Header Component", () => {
   it("should render withouth errors", () => {
     //   const component = setUp();
     // console.log(component.debug());
-    const wrapper = findByTestAtrr(component, "headerComponent");
+    const wrapper = findByTestAtrr(component, "headerCsomponent");
     expect(wrapper.length).toBe(1);
   });
 });

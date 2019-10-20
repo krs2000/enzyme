@@ -39,7 +39,13 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "CI=true npm test"
+    }
+  },
   "devDependencies": {
+    "husky": "^3.0.9",
     "moxios": "^0.4.0"
   }
 }

@@ -15,19 +15,40 @@ const tempArr = [
     onlineStatus: true
   }
 ];
+
+const initialState = {
+  hideBtn: false
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      ...initialState
+    };
     this.fetch = this.fetch.bind(this);
+    this.exampleMethod_updateState = this.exampleMethod_updateState.bind(this);
   }
 
   fetch() {
     this.props.fetchPosts();
-    console.log(this.props);
+    this.exampleMethod_updateState();
+  }
+
+  exampleMethod_updateState() {
+    const { hideBtn } = this.state;
+    this.setState({
+      hideBtn: !hideBtn
+    });
+  }
+
+  exampleMethod_returnsAValue(number) {
+    return number++;
   }
 
   render() {
     const { posts } = this.props;
+    const { hideBtn } = this.state;
     const configureButton = {
       buttonText: "Get posts",
       emitEvent: this.fetch
@@ -41,7 +62,7 @@ class App extends React.Component {
             header="Posts"
             desc="Click the button to render posts"
           />
-          <SharedButton {...configureButton} />
+          {!hideBtn && <SharedButton {...configureButton} />}
           {posts.length > 0 &&
             posts.map((post, index) => {
               const { title, body } = post;

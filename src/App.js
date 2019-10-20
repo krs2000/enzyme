@@ -6,6 +6,8 @@ import SharedButton from "./components/button";
 import { connect } from "react-redux";
 import { fetchPosts } from "./actions/";
 import ListItem from "./components/listItem";
+import HookButton from "./components/hookButton";
+
 const tempArr = [
   {
     fName: "Joe",
@@ -62,6 +64,7 @@ class App extends React.Component {
             header="Posts"
             desc="Click the button to render posts"
           />
+          <HookButton />
           {!hideBtn && <SharedButton {...configureButton} />}
           {posts.length > 0 &&
             posts.map((post, index) => {
